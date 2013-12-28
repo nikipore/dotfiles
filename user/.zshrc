@@ -47,21 +47,7 @@ HIST_STAMPS="yyyy-mm-dd"
 plugins=(history-substring-search git grep vim brew osx sublime mercurial python colorize)
 
 source $ZSH/oh-my-zsh.sh
-source .zsh/git-prompt/zshrc.sh
 
 # User configuration
 
-PROMPT='%B%n@%m:%~$%b '
-RPROMPT='$(git_super_status)'
-
-bindkey -e
-
-# bind UP and DOWN arrow keys
-zmodload zsh/terminfo
-bindkey "$terminfo[kcuu1]" history-substring-search-up
-bindkey "$terminfo[kcud1]" history-substring-search-down
-
-# generic settings
-
-source /etc/profile
-source $HOME/.bashrc
+source $HOME/.zshrc.user

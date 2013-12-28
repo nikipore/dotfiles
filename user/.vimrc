@@ -1,3 +1,6 @@
+set nocompatible
+set t_Co=256
+set shiftround
 set incsearch
 set scrolloff=2
 set autoindent
@@ -13,4 +16,4 @@ set pastetoggle=<f11>
 set number
 set hlsearch
 set incsearch
-syntax on
+syntax enable

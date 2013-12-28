@@ -1,0 +1,16 @@
+set incsearch
+set scrolloff=2
+set autoindent
+set smartindent
+set tabstop=4
+set expandtab
+set shiftwidth=4
+set showmatch
+set filetype=on
+set nocompatible
+set nopaste
+set pastetoggle=<f11>
+set number
+set hlsearch
+set incsearch
+syntax on

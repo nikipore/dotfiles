@@ -1,7 +1,13 @@
 # generic settings
 
 source /etc/profile
-source $HOME/.bashrc
+source ${ZDOTDIR:-$HOME}/.bashrc
 
 # zsh specific settings
 
+for file in `ls ${ZDOTDIR:-$HOME}/.zsh`; do
+  source ${ZDOTDIR:-$HOME}/.zsh/$file
+done
+
+bindkey '^[[1;9C' forward-word
+bindkey '^[[1;9D' backward-word

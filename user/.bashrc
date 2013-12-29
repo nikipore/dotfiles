@@ -1,4 +1,5 @@
 source $HOME/.profile
+source $HOME/.alias
 
 export HISTCONTROL=erasedups  # Ignore duplicate entries in history
 export HISTFILE=~/.histfile

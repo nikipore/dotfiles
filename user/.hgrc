@@ -1,0 +1,10 @@
+[ui]
+username = Jan Mueller <nikipore@gmail.com>
+verbose = True
+
+[alias]
+nudge = push --rev .
+
+[diff]
+git = True
+

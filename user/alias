@@ -1,1 +1,2 @@
 alias pp='pygmentize -g'
+alias la='ls -A'

@@ -12,4 +12,6 @@ umask 022
 
 export TEMP=/tmp
 export TERM=xterm-color
+
 export EDITOR=vim
+export VISUAL=vim

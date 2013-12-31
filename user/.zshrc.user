@@ -9,22 +9,30 @@ for file in `ls ${ZDOTDIR:-$HOME}/.zsh`; do
   source ${ZDOTDIR:-$HOME}/.zsh/$file
 done
 
-bindkey '^[[1;9C' forward-word
-bindkey '^[[1;9D' backward-word
+# vi command mode
+bindkey "^[" vi-cmd-mode # Esc
+bindkey "^[OP" vi-cmd-mode # F1
+bindkey '–' vi-cmd-mode # en dash (Alt + minus on the Mac)
 
+# line stack
+bindkey '^[[1;9A' push-line # Alt + up arrow
+bindkey '^[[1;9B' get-line # Alt + down arrow
+
+# jump words
+bindkey '^[[1;9C' forward-word # Alt + right arrow
+bindkey '^[[1;9D' backward-word # Alt + right arrow
+
+# history incremental search
 bindkey "^R" history-incremental-search-backward
 bindkey "^S" history-incremental-search-forward
 
 # history substring search
 
-# bind UP and DOWN arrow keys
-bindkey "^[[A" history-substring-search-up
-bindkey "^[[B" history-substring-search-down
+bindkey "^[[A" history-substring-search-up # up arrow
+bindkey "^[[B" history-substring-search-down # down arrow
 
-# bind P and N for EMACS mode
 bindkey -M emacs '^P' history-substring-search-up
 bindkey -M emacs '^N' history-substring-search-down
 
-# bind k and j for VI mode
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down

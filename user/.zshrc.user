@@ -10,17 +10,19 @@ for file in `ls ${ZDOTDIR:-$HOME}/.zsh`; do
 done
 
 # vi command mode
-bindkey "^[" vi-cmd-mode # Esc
-bindkey "^[OP" vi-cmd-mode # F1
-bindkey '–' vi-cmd-mode # en dash (Alt + minus on the Mac)
+bindkey -M emacs "^[^[" vi-cmd-mode # Esc-Esc
 
 # line stack
 bindkey '^[[1;9A' push-line # Alt + up arrow
 bindkey '^[[1;9B' get-line # Alt + down arrow
 
 # jump words
-bindkey '^[[1;9C' forward-word # Alt + right arrow
+bindkey '^[[1;9C' forward-word # Alt + left arrow
 bindkey '^[[1;9D' backward-word # Alt + right arrow
+
+# jump to beginning/end of line
+bindkey '^[[H' beginning-of-line # Fn + left arrow
+bindkey '^[[F' end-of-line # Fn + right arrow
 
 # history incremental search
 bindkey "^R" history-incremental-search-backward

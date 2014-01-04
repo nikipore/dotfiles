@@ -1,2 +1,5 @@
+unalias rm
+alias l='ls -A'
+alias la='ls -lA'
 alias pp='pygmentize -g'
-alias la='ls -A'
+alias rmi='rm -i'

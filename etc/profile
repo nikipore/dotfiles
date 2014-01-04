@@ -15,3 +15,5 @@ export TERM=xterm-color
 
 export EDITOR=vim
 export VISUAL=vim
+
+export LANG=${LANG/de_DE/en_US}

@@ -1,4 +1,4 @@
-unalias rm
+unalias rm mv cp >/dev/null 2>/dev/null
 alias l='ls -A'
 alias la='ls -lA'
 alias pp='pygmentize -g'

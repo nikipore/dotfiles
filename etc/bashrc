@@ -3,7 +3,7 @@
 # if not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-export PS1='\[\033[1m\]\u@\h:\w$\[\033[m\] '
+export PS1='\[\033[1m\]\u@\h:\w\$\[\033[m\] '
 
 # make bash check its window size after a process completes
 shopt -s checkwinsize

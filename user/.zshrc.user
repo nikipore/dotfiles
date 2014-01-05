@@ -1,19 +1,46 @@
 # generic settings
+# ----------------
 
 source /etc/profile
-source ${ZDOTDIR:-$HOME}/.bashrc
+source ${ZDOTDIR:-$HOME}/.profile
 
 # zsh specific settings
+# ---------------------
+
+# import hook
 
 for file in `ls ${ZDOTDIR:-$HOME}/.zsh`; do
   source ${ZDOTDIR:-$HOME}/.zsh/$file
 done
 
+# history
+
+HISTFILE=~/.histfile
+SAVEHIST=10000
+setopt histignorespace
+setopt histfindnodups
+unsetopt histignorealldups
+unsetopt histignoredups
+unsetopt histsavenodups
+
+# other options
+
+#setopt nopromptcr
+setopt transientrprompt
+setopt histallowclobber
+
+# key bindings
+
+# edit command line
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey "^[e" edit-command-line
+
 # vi command mode
-bindkey -M emacs "^[^[" vi-cmd-mode # Esc-Esc
+bindkey "^[^[" vi-cmd-mode # Esc-Esc
 
 # line stack
-bindkey '^[[1;9A' push-line # Alt + up arrow
+bindkey '^[[1;9A' push-line-or-edit # Alt + up arrow
 bindkey '^[[1;9B' get-line # Alt + down arrow
 
 # jump words

@@ -1,0 +1,22 @@
+typeset -A NAMED_DIRS
+
+NAMED_DIRS=(
+  git       ~/git
+  hg        ~/hg
+  blog      ~/git/luftmensch
+  stompest  ~/git/stompest
+  down      ~/Downloads
+  docs      ~/Documents
+  desk      ~/Desktop
+  scratch   /Volumes/Daten/Scratch
+  drop      ~/Dropbox
+)
+
+for key in ${(k)NAMED_DIRS}; do
+  if [[ -d ${NAMED_DIRS[$key]} ]]; then
+    hash -d $key=${NAMED_DIRS[$key]}
+  else
+    unset "NAMED_DIRS[$key]"
+  fi
+done
+

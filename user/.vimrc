@@ -1,3 +1,7 @@
+execute pathogen#infect()
+syntax on
+filetype plugin indent on
+
 set nocompatible
 set t_Co=256
 set shiftround
@@ -16,7 +20,6 @@ set nocompatible
 set number
 set hlsearch
 set incsearch
-syntax enable
 
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"

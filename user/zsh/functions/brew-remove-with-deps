@@ -1,0 +1,9 @@
+brew-remove-with-deps() {
+  formula="$*"
+ 
+  if [ -n "$formula" ]; then
+     echo "Removing" "$formula" "and all its deps.."
+     brew rm $formula
+     brew rm $(join <(brew leaves) <(brew deps "$formula"))
+  fi
+}

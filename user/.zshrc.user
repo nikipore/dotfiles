@@ -3,14 +3,17 @@
 
 source /etc/profile
 source ${ZDOTDIR:-$HOME}/.profile
+source $HOME/.alias
 
 # zsh specific settings
 # ---------------------
 
 # import hook
 
-for file in `ls ${ZDOTDIR:-$HOME}/.zsh`; do
-  source ${ZDOTDIR:-$HOME}/.zsh/$file
+fpath=(${ZDOTDIR:-$HOME}/.zsh/functions $fpath) 
+
+for file in `ls ${ZDOTDIR:-$HOME}/.zsh/modules`; do
+  source ${ZDOTDIR:-$HOME}/.zsh/modules/$file
 done
 
 # history
@@ -28,8 +31,24 @@ unsetopt histsavenodups
 #setopt nopromptcr
 setopt transientrprompt
 setopt histallowclobber
+setopt cshnullglob
 
 # key bindings
+
+# completion
+
+zstyle ':completion:::::' completer _expand _complete _ignored
+bindkey "^Z" undo
+bindkey "^I" complete-word
+
+zmodload zsh/complist
+bindkey -M menuselect '^O' accept-and-menu-complete
+
+bindkey -M menuselect 'i' accept-and-infer-next-history
+bindkey -M menuselect 'j' down-line-or-history
+bindkey -M menuselect 'k' up-line-or-history
+bindkey -M menuselect 'h' backward-char
+bindkey -M menuselect 'l' forward-char
 
 # edit command line
 autoload -U edit-command-line

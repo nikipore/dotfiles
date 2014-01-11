@@ -8,7 +8,7 @@ NAMED_DIRS=(
   down      ~/Downloads
   docs      ~/Documents
   desk      ~/Desktop
-  scratch   /Volumes/Daten/Scratch
+  scratch   ~/scratch
   drop      ~/Dropbox
 )
 

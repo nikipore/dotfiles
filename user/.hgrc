@@ -1,6 +1,7 @@
 [ui]
 username = Jan Mueller <nikipore@gmail.com>
 verbose = True
+ssh = /usr/bin/ssh -4
 
 [alias]
 nudge = push --rev .
